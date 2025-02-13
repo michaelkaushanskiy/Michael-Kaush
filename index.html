@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Kaush - Portfolio</title>
-    <style>
-        body {
-            font-family: "Courier New", monospace;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            width: 60%;
-            margin: auto;
-        }
-        img {
-            width: 100%;
-            max-width: 600px;
-            border: 2px solid black;
-        }
-        p {
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Kaush - Tattoo Artist & Illustrator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Michael Kaush - Tattoo Portfolio</h1>
+  <!-- Header -->
+  <header>
+    <h1>Michael Kaush</h1>
+    <nav>
+      <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <img src="your-image-1.jpg" alt="Tattoo 1">
-        <p>Description for Tattoo 1</p>
-
-        <img src="your-image-2.jpg" alt="Tattoo 2">
-        <p>Description for Tattoo 2</p>
-
-        <img src="your-image-3.jpg" alt="Tattoo 3">
-        <p>Description for Tattoo 3</p>
-
-        <p>Contact me at: <a href="mailto:your@email.com">your@email.com</a></p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Tattoos & Illustrations</h2>
+      <p>Fine Art in Ink, Pencil, and Pixels</p>
     </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/tattoo1.jpg" alt="Tattoo Art"></div>
+      <div class="gallery-item"><img src="images/pencil1.jpg" alt="Pencil Art"></div>
+      <div class="gallery-item"><img src="images/digital1.jpg" alt="Digital Art"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="images/your-photo.jpg" alt="Michael Kaush">
+      <p>Hi, I'm Michael Kaush, a tattoo artist and illustrator based in [Your Location]. With a passion for fine details and storytelling, I specialize in creating unique tattoos, intricate pencil drawings, and digital art. Let's bring your vision to life.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+      <a href="https://behance.net/yourprofile" target="_blank">Behance</a>
+    </div>
+    <p>© 2023 Michael Kaush. All rights reserved.</p>
+  </footer>
 </body>
 </html>
