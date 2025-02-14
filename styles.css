@@ -152,3 +152,9 @@ footer {
 .social-links a {
   margin: 0 10px;
 }
+
+img {
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the entire image is visible */
+}
