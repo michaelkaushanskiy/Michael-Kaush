@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artwork</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Michael Kaush</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="photo-detail">
+    <h2 id="detail-title" class="photo-detail-title">Artwork</h2>
+    <div class="photo-detail-inner">
+      <div class="photo-detail-image-wrap">
+        <img id="detail-image" src="" alt="Artwork">
+      </div>
+      <div class="photo-detail-controls">
+        <div class="photo-detail-actions">
+          <p id="detail-price" class="price">Price: 30</p>
+          <div class="qty-control">
+            <button id="qty-decrease" aria-label="Decrease quantity">-</button>
+            <input id="qty-input" type="number" min="1" value="1">
+            <button id="qty-increase" aria-label="Increase quantity">+</button>
+          </div>
+          <button id="add-to-cart">Add to Cart</button>
+          <div class="related-label">Related artworks</div>
+          <div class="nav-buttons">
+            <a id="back-home" class="next-button" href="index.html">Go Home</a>
+            <a id="back-button" class="next-button" href="#">Back</a>
+            <a id="next-button" class="next-button" href="#">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/mktattooer/" target="_blank">Instagram</a>
+    </div>
+    <p>© 2025 Michael Kaush. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function() {
+      function getQueryParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      const img = getQueryParam('img');
+      const title = getQueryParam('title') || 'Artwork';
+      const imageEl = document.getElementById('detail-image');
+      const titleEl = document.getElementById('detail-title');
+      const priceEl = document.getElementById('detail-price');
+
+      if (img) {
+        imageEl.src = img;
+        imageEl.alt = title;
+      }
+      titleEl.textContent = decodeURIComponent(title);
+      // Simple demo prices per artwork (example structure)
+      const priceMap = {
+        'images/tattoo1.jpg': '40.00',
+        'images/pencil1.jpg': '30.00',
+        'images/pencil2.jpg': '30.00',
+        'images/digital1.jpg': '20.00',
+        'images/ink1.jpg': '25.00'
+      };
+      if (priceEl) {
+        const price = priceMap[img] || '30.00';
+        priceEl.textContent = 'Price: ' + price;
+      }
+
+      // Simple cart using localStorage
+      const CART_KEY = 'mk_cart_items';
+      function readCart() {
+        try {
+          const raw = localStorage.getItem(CART_KEY);
+          return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+          return [];
+        }
+      }
+      function writeCart(items) {
+        localStorage.setItem(CART_KEY, JSON.stringify(items));
+      }
+      function totalCartQuantity() {
+        return readCart().reduce(function(sum, it) {
+          return sum + (typeof it.qty === 'number' ? it.qty : 1);
+        }, 0);
+      }
+      function updateCartCount() {
+        const count = totalCartQuantity();
+        const countEl = document.getElementById('cart-count');
+        if (countEl) countEl.textContent = String(count);
+      }
+
+      // Quantity controls
+      const qtyInput = document.getElementById('qty-input');
+      document.getElementById('qty-decrease').addEventListener('click', function() {
+        const val = Math.max(1, parseInt(qtyInput.value || '1', 10) - 1);
+        qtyInput.value = String(val);
+      });
+      document.getElementById('qty-increase').addEventListener('click', function() {
+        const val = Math.max(1, parseInt(qtyInput.value || '1', 10) + 1);
+        qtyInput.value = String(val);
+      });
+
+      document.getElementById('add-to-cart').addEventListener('click', function() {
+        if (!img) return;
+        const items = readCart();
+        const qty = Math.max(1, parseInt(qtyInput.value || '1', 10));
+        const existing = items.find(function(it) { return it.img === img; });
+        if (existing) {
+          existing.qty = (existing.qty || 1) + qty;
+        } else {
+          items.push({ img: img, title: title, qty: qty });
+        }
+        writeCart(items);
+        updateCartCount();
+        this.textContent = 'Added';
+        setTimeout(() => { this.textContent = 'Add to Cart'; }, 1200);
+      });
+
+      updateCartCount();
+
+      // Optional: Next button cycles through known gallery images
+      const gallery = [
+        { img: 'images/tattoo1.jpg', title: 'Tattoo Art' },
+        { img: 'images/pencil1.jpg', title: 'Pencil Art' },
+        { img: 'images/pencil2.jpg', title: 'Pencil art' },
+        { img: 'images/digital1.jpg', title: 'Digital Art' },
+        { img: 'images/ink1.jpg', title: 'Ink Art' }
+      ];
+      function buildUrl(item) {
+        const u = new URL(window.location.origin + window.location.pathname);
+        u.searchParams.set('img', item.img);
+        u.searchParams.set('title', encodeURIComponent(item.title));
+        return u.toString();
+      }
+      function getCurrentIndex() {
+        const idx = gallery.findIndex(function(it) { return it.img === img; });
+        return idx >= 0 ? idx : 0;
+      }
+      const nextBtn = document.getElementById('next-button');
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function(ev) {
+          ev.preventDefault();
+          const i = getCurrentIndex();
+          const next = gallery[(i + 1) % gallery.length];
+          window.location.href = buildUrl(next);
+        });
+      }
+
+      const backBtn = document.getElementById('back-button');
+      if (backBtn) {
+        backBtn.addEventListener('click', function(ev) {
+          ev.preventDefault();
+          if (window.history.length > 1) {
+            window.history.back();
+          } else {
+            window.location.href = 'index.html#gallery';
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,312 @@
+/* General Styles */
+body {
+  font-family: 'Old Standard TT', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2px 0;
+  background: #f4f4f4;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 160px;
+  }
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 20px 15%;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin: 0 0 20px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.gallery-item {
+  position: relative;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Responsive columns */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    padding: 16px 12px;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .gallery-item {
+    width: 100%;
+  }
+}
+
+/* About Section */
+.about {
+  padding: 40px 15%;
+  text-align: center;
+}
+
+.about h2 {
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "photo";
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
+  background: transparent;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-photo {
+  grid-area: photo;
+  width: 100%;
+  max-width: 210px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-text h3 {
+  margin: 0 0 8px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+}
+
+.about-text p {
+  margin: 0 0 16px 0;
+}
+
+.about-text {
+  grid-area: text;
+  text-align: center;
+}
+
+/* removed button styles */
+
+/* layout is single-column on all sizes, no override needed */
+
+/* Contact Section */
+.contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact input, .contact textarea {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+  margin-top: 40px;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+/* Photo detail page */
+.photo-detail {
+  padding: 16px 6%;
+}
+
+.photo-detail-title {
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.photo-detail-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 6px;
+  align-items: center;
+}
+
+.photo-detail-image-wrap {
+  width: 100%;
+}
+
+.photo-detail-image-wrap img {
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.photo-detail-controls { }
+
+.photo-detail-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  margin: 0 0 4px 0;
+  font-weight: bold;
+}
+
+.related-label {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.photo-detail-actions button,
+.photo-detail-actions .next-button {
+  padding: 8px 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.photo-detail-actions .next-button {
+  display: inline-block;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty-control button {
+  padding: 6px 10px;
+}
+
+.qty-control input[type="number"] {
+  width: 52px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.nav-buttons {
+  display: inline-flex;
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .photo-detail-inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
