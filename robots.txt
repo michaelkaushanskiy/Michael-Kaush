@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://michaelkaush.com/sitemap.xml

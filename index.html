@@ -3,73 +3,260 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Kaush - Tattoo Artist & Illustrator</title>
+  <title>Michael Kaush — Tattoo Artist & Illustrator in Tel Aviv</title>
+  <meta name="description" content="Michael Kaush is a traditional tattoo artist and illustrator in Tel Aviv. Black & grey and colour tattoos, custom designs, flash and original drawings. Book through Instagram.">
+  <meta name="theme-color" content="#0e0d0c">
+  <link rel="canonical" href="https://michaelkaush.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- How the site looks when the link is shared (WhatsApp, Instagram, Facebook...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Michael Kaush — Tattoo Artist & Illustrator">
+  <meta property="og:description" content="Traditional tattoos, flash and fine illustration. Tel Aviv.">
+  <meta property="og:url" content="https://michaelkaush.com/">
+  <meta property="og:image" content="https://michaelkaush.com/images/tattoo1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Pirata+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Helps Google show the studio in local search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "Michael Kaush Tattoo",
+    "url": "https://michaelkaush.com/",
+    "image": "https://michaelkaush.com/images/tattoo1.jpg",
+    "description": "Traditional tattoos, custom designs, flash and illustration by Michael Kaush.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Psycho Tattoos, Dizengoff Center",
+      "addressLocality": "Tel Aviv",
+      "addressCountry": "IL"
+    },
+    "sameAs": ["https://www.instagram.com/mktattooer/"]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Michael Kaush</h1>
-    <nav>
-      <ul>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Michael Kaush, back to top">Michael Kaush</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="menu-bar"></span><span class="menu-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#booking">Booking</a>
+        <a class="btn btn-small" href="#contact">Book a session</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Tattoos & Illustrations</h2>
-      <p>Fine Art in Ink, Pencil, and Pixels</p>
-    </div>
-  </section> 
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Tattoo artist &amp; illustrator · Tel Aviv</p>
+          <h1>Bold lines.<br><em>Timeless</em> tattoos.</h1>
+          <p class="lede">Traditional tattooing with fine, clean detail — custom pieces, flash and original drawings, made by hand at Psycho Tattoos, Dizengoff Center.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Book a session</a>
+            <a class="btn btn-ghost" href="#work">See the work</a>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <div class="arch">
+            <img src="images/tattoo1.jpg" alt="Black and grey traditional tattoo of a woman's profile crowned with butterflies" width="888" height="1084" fetchpriority="high">
+          </div>
+          <figcaption>Butterfly Lady — tattoo</figcaption>
+        </figure>
+      </div>
+    </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item"><a href="photo.html?img=images/tattoo1.jpg&title=Tattoo%20Art"><img src="images/tattoo1.jpg" alt="Tattoo Art"></a></div>
-      <div class="gallery-item"><a href="photo.html?img=images/pencil1.jpg&title=Pencil%20Art"><img src="images/pencil1.jpg" alt="Pencil Art"></a></div>
-      <div class="gallery-item"><a href="photo.html?img=images/pencil2.jpg&title=Pencil%20art"><img src="images/pencil2.jpg" alt="Pencil art"></a></div>
-      <div class="gallery-item"><a href="photo.html?img=images/digital1.jpg&title=Digital%20Art"><img src="images/digital1.jpg" alt="Digital Art"></a></div>
-      <div class="gallery-item"><a href="photo.html?img=images/ink1.jpg&title=Ink%20Art"><img src="images/ink1.jpg" alt="Ink Art"></a></div>
-
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <div class="about-card">
-      <img class="about-photo" src="images/IMG_1379.jpeg" alt="Michael Kaush">
-      <div class="about-text">
-        <h3>Tattoo Artist & Illustrator</h3>
-        <p>Hi, I'm Michael Kaush, a tattoo artist and illustrator based in Tel-Aviv. With a passion for fine and clean details, I specialize in creating unique tattoos, intricate pencil drawings, and digital art. Let's bring your vision to life.</p>
+    <!-- Scrolling strip -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Traditional</span><span>✦</span><span>Black &amp; Grey</span><span>✦</span><span>Custom Designs</span><span>✦</span><span>Flash</span><span>✦</span><span>Illustration</span><span>✦</span>
+        <span>Traditional</span><span>✦</span><span>Black &amp; Grey</span><span>✦</span><span>Custom Designs</span><span>✦</span><span>Flash</span><span>✦</span><span>Illustration</span><span>✦</span>
       </div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <!-- Gallery -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Ink, pencil &amp; paper</h2>
+          <p class="section-sub">Tap any piece to see it up close. More fresh work on <a href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener">Instagram</a>.</p>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="social-links">
-      <a href="https://www.instagram.com/mktattooer/" target="_blank">Instagram</a>
+        <!-- To add a piece: copy one <li> block, change the image, title and type. -->
+        <ul class="gallery" id="gallery">
+          <li class="piece piece-feature reveal" id="work-butterfly-lady">
+            <button class="piece-btn" data-src="images/tattoo1.jpg" data-title="Butterfly Lady" data-type="Tattoo · Black &amp; grey">
+              <img src="images/tattoo1.jpg" alt="Black and grey tattoo of a woman's profile crowned with butterflies" width="888" height="1084" loading="lazy">
+              <span class="piece-meta"><span class="piece-title">Butterfly Lady</span><span class="piece-type">Tattoo</span></span>
+            </button>
+          </li>
+          <li class="piece reveal" id="work-sacred-heart">
+            <button class="piece-btn" data-src="images/pencil1.jpg" data-title="Sacred Heart Sheet" data-type="Pencil · Framed original">
+              <img src="images/pencil1.jpg" alt="Framed pencil flash sheet with a sacred heart, butterflies, thistle and daisies" width="1178" height="1174" loading="lazy">
+              <span class="piece-meta"><span class="piece-title">Sacred Heart Sheet</span><span class="piece-type">Pencil</span></span>
+            </button>
+          </li>
+          <li class="piece reveal" id="work-cowgirl">
+            <button class="piece-btn" data-src="images/pencil2.jpg" data-title="Cowgirl" data-type="Coloured pencil · Original drawing">
+              <img src="images/pencil2.jpg" alt="Coloured pencil drawing of a traditional-style cowgirl with a patterned scarf" width="720" height="1280" loading="lazy">
+              <span class="piece-meta"><span class="piece-title">Cowgirl</span><span class="piece-type">Colour pencil</span></span>
+            </button>
+          </li>
+          <li class="piece reveal" id="work-true-love">
+            <button class="piece-btn" data-src="images/digital1.jpg" data-title="True Love Flash" data-type="Digital · Flash linework">
+              <img src="images/digital1.jpg" alt="Digital flash sheet linework: True Love hearts, skull with butterflies, strawberries and a skeleton hand" width="720" height="1009" loading="lazy">
+              <span class="piece-meta"><span class="piece-title">True Love Flash</span><span class="piece-type">Digital flash</span></span>
+            </button>
+          </li>
+          <li class="piece reveal" id="work-swallowtail">
+            <button class="piece-btn" data-src="images/ink1.jpg" data-title="Swallowtail &amp; Rose" data-type="Ink · Framed original">
+              <img src="images/ink1.jpg" alt="Framed ink drawing of a swallowtail butterfly above a rose" width="720" height="1280" loading="lazy">
+              <span class="piece-meta"><span class="piece-title">Swallowtail &amp; Rose</span><span class="piece-type">Ink</span></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section-alt">
+      <div class="container about">
+        <figure class="about-photo reveal">
+          <img src="images/michael.jpg" alt="Michael Kaush tattooing a client at the studio" width="900" height="1200" loading="lazy">
+        </figure>
+        <div class="about-text reveal">
+          <p class="eyebrow">About</p>
+          <h2>Hi, I'm Michael.</h2>
+          <p>I'm a tattoo artist and illustrator based in Tel Aviv, working out of <strong>Psycho Tattoos</strong> in Dizengoff Center. My work is rooted in traditional tattooing — strong lines, solid black, and shading that holds up for decades — with a love for fine, clean detail.</p>
+          <p>Away from the machine I draw constantly: pencil, ink and digital flash. Every tattoo starts on paper, and every design is made for the person wearing it.</p>
+          <ul class="facts">
+            <li><span>Style</span>Traditional, black &amp; grey, colour</li>
+            <li><span>Studio</span>Psycho Tattoos, Dizengoff Center</li>
+            <li><span>City</span>Tel Aviv</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How booking works -->
+    <section id="booking" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Booking</p>
+          <h2>How it works</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Pick or pitch</h3>
+            <p>Browse the flash in the <em>Flash</em> highlight on Instagram, or bring your own idea for a custom piece.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Send a message</h3>
+            <p>Use the form below or DM me with your idea, placement, size and the dates that work for you.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Design together</h3>
+            <p>We talk through the design, placement and any changes until it feels right.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Lock it in</h3>
+            <p>Confirm your appointment, with a deposit when needed, and you're on the books.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact">
+        <div class="contact-intro reveal">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let's make something that lasts.</h2>
+          <p>Fill this in and hit send. Your message is copied and Instagram opens, so you can paste it straight into a DM to <a href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener">@mktattooer</a>.</p>
+          <address class="studio">
+            <strong>Psycho Tattoos</strong><br>
+            Dizengoff Center, Tel Aviv<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Psycho+Tattoos+Dizengoff+Center+Tel+Aviv" target="_blank" rel="noopener">Open in Maps →</a>
+          </address>
+        </div>
+
+        <form class="booking-form reveal" id="booking-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-idea">Your idea</label>
+            <textarea id="f-idea" name="idea" rows="4" placeholder="A flash piece you liked, or describe your custom idea" required></textarea>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-placement">Placement</label>
+              <input id="f-placement" name="placement" type="text" placeholder="e.g. outer forearm">
+            </div>
+            <div class="field">
+              <label for="f-size">Approx. size</label>
+              <input id="f-size" name="size" type="text" placeholder="e.g. 10 cm">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-dates">Dates that work for you</label>
+            <input id="f-dates" name="dates" type="text" placeholder="e.g. weekdays in December">
+          </div>
+          <button class="btn btn-block" type="submit">Send via Instagram</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo" href="#top">Michael Kaush</a>
+      <a href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener" class="ig-link">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+        @mktattooer
+      </a>
+      <p class="copyright">© <span id="year">2026</span> Michael Kaush. All artwork is original; please don't reuse without permission.</p>
     </div>
-    <p>© 2025 Michael Kaush. All rights reserved.</p>
   </footer>
+
+  <!-- Full-screen artwork viewer -->
+  <dialog class="lightbox" id="lightbox" aria-label="Artwork viewer">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" aria-label="Previous piece">‹</button>
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption>
+        <span class="lb-title" id="lb-title"></span>
+        <span class="lb-type" id="lb-type"></span>
+        <a class="lb-ask" id="lb-ask" href="#contact">Ask about this piece →</a>
+      </figcaption>
+    </figure>
+    <button class="lb-nav lb-next" aria-label="Next piece">›</button>
+  </dialog>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
