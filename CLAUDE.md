@@ -11,7 +11,7 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 |---|---|
 | The real website (theme, pages, menus, collections, products) | **Shopify**, via the Shopify connector. Theme: **Horizon** (the live/MAIN theme). Design rules are in the theme's `DESIGN.md`. |
 | Products / fulfilment | **Printify**, linked to the Shopify store. No Claude connector: Michael or the Chrome Claude uses Printify's site, or use the Printify API with a token entered through the secure credential form (never in chat, never in files). |
-| Domain | Namecheap. The connector has **write access** (DNS records, nameservers) in new sessions, but always ask Michael before changing anything. It still points to **GitHub Pages** (this repo, branch `main`) until the shop is ready. |
+| Domain | Namecheap. The connector has **write access** (DNS records, nameservers) in new sessions, but always ask Michael before changing anything. **Switched to Shopify on 2026-11-20**: A `@` → 23.227.38.65, CNAME `www` → shops.myshopify.com, TXT kept. Rollback values (GitHub Pages): A `@` → 185.199.108.153/.109/.110/.111 and CNAME `www` → Michaelkaush.github.io. **When changing DNS, always add new records BEFORE deleting old ones.** |
 | This repo | The old portfolio site (`main`, live until the domain moves), brand assets in `brand/`, and a design mock in `shop-preview/`. |
 
 ## Decisions already made
@@ -34,10 +34,13 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 - Michael's design files: print-ready PNGs, transparent background (tees about 4500×5400 px at 300 DPI; embroidery: bold, few colours).
 
 ## Done
+- Domain michaelkaush.com points to Shopify. The public sees a branded "Coming soon" password page (EN/HE/RU) until launch.
 - New design published on the Horizon theme (store still password-protected).
 - Hebrew (/he) and Russian (/ru) are live, with every page, menu, collection and home/footer text translated. Language switcher in the header. Hebrew had to be attached to the store's web address with `webPresenceUpdate` (alternateLocales `["ru","he"]`). Theme text can only be translated after the theme is published, because translations use the live theme's content digests.
 
 ## Still to do
+- Make michaelkaush.com the **primary domain** in Shopify (Settings → Domains) once it shows Connected with the TLS certificate ready (no API for this: Michael or the Chrome Claude).
+- After that, GitHub Pages no longer serves the site: make this repo private and turn off Pages.
 - When adding any new text or product: add Hebrew and Russian translations too.
 - Cookie banner (Shopify admin → Settings → Customer privacy).
 - P.O. box address for the Business details page.
