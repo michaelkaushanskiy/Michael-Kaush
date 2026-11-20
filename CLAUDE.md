@@ -11,7 +11,7 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 |---|---|
 | The real website (theme, pages, menus, collections, products) | **Shopify**, via the Shopify connector. Theme: **Horizon** (the live/MAIN theme). Design rules are in the theme's `DESIGN.md`. |
 | Products / fulfilment | **Printify**, linked to the Shopify store. No Claude connector: Michael or the Chrome Claude uses Printify's site, or use the Printify API with a token entered through the secure credential form (never in chat, never in files). |
-| Domain | Namecheap (connector is read-only). It still points to **GitHub Pages** (this repo, branch `main`) until the shop is ready. |
+| Domain | Namecheap. The connector has **write access** (DNS records, nameservers) in new sessions, but always ask Michael before changing anything. It still points to **GitHub Pages** (this repo, branch `main`) until the shop is ready. |
 | This repo | The old portfolio site (`main`, live until the domain moves), brand assets in `brand/`, and a design mock in `shop-preview/`. |
 
 ## Decisions already made
