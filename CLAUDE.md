@@ -34,11 +34,14 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 - Michael's design files: print-ready PNGs, transparent background (tees about 4500×5400 px at 300 DPI; embroidery: bold, few colours).
 
 ## Done
-- Domain michaelkaush.com points to Shopify. The public sees a branded "Coming soon" password page (EN/HE/RU) until launch.
+- Domain michaelkaush.com points to Shopify. Paid plan active, password removed: the store is **public** (2026-11-20). The home page shows "First drop coming soon" (placeholder product grid hidden) until products exist. A branded password page also exists in EN/HE/RU if private mode is ever turned back on.
 - New design published on the Horizon theme (store still password-protected).
 - Hebrew (/he) and Russian (/ru) are live, with every page, menu, collection and home/footer text translated. Language switcher in the header. Hebrew had to be attached to the store's web address with `webPresenceUpdate` (alternateLocales `["ru","he"]`). Theme text can only be translated after the theme is published, because translations use the live theme's content digests.
 
 ## Still to do
+- **Before selling:** products (Michael's designs → Printify), a payment provider (check Settings → Payments; Shopify Payments may not be available for Israel, so PayPal or a local provider app), a payment card in Printify, shipping rates.
+- When products exist: re-enable the home page "New arrivals" product list (`product_list_fa6P9H`, currently `disabled: true`) and remove the "First drop coming soon" section.
+- Hebrew RTL: mirror the arrow icon in the email sign-up fields (cosmetic).
 - Make michaelkaush.com the **primary domain** in Shopify (Settings → Domains) once it shows Connected with the TLS certificate ready (no API for this: Michael or the Chrome Claude).
 - After that, GitHub Pages no longer serves the site: make this repo private and turn off Pages.
 - When adding any new text or product: add Hebrew and Russian translations too.
