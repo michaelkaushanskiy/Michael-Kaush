@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Michael Kaush — Shop (preview)</title>
+  <meta name="theme-color" content="#262626">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Pirata+One&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Brand tokens ===== */
+    :root {
+      --charcoal: #262626;   /* header + footer */
+      --night: #141414;      /* hero background */
+      --ghost: #3a3a3a;      /* big faint lettering */
+      --paper: #ffffff;
+      --text: #121212;
+      --text-dim: rgba(18, 18, 18, .7);
+      --red: #c8372a;
+      --head: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+      --body: Helvetica, Arial, sans-serif;
+      --gutter: 16px;
+    }
+    @media (min-width: 750px) { :root { --gutter: 50px; } }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: #000;
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.6;
+      letter-spacing: .04em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* ===== Opening: page appears as a thin strip in the middle and opens out to full width ===== */
+    .site { background: var(--paper); }
+    .intro .site {
+      clip-path: inset(0 49% 0 49%);
+      animation: open-doors .65s cubic-bezier(.55, 0, .15, 1) .12s forwards;
+    }
+    @keyframes open-doors { to { clip-path: inset(0 0 0 0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .intro .site { clip-path: none; animation: none; }
+    }
+
+    /* ===== Header ===== */
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      background: var(--charcoal);
+      color: #fff;
+    }
+    .header-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 6px var(--gutter);
+    }
+    .logo { display: block; width: 92px; height: 92px; }
+    .logo svg { width: 100%; height: 100%; }
+    @media (min-width: 750px) { .logo { width: 108px; height: 108px; } }
+    .icons { display: flex; gap: 4px; }
+    .icons-right { justify-content: flex-end; }
+    .icon-btn {
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      background: none; border: 0; color: #fff; cursor: pointer; padding: 0;
+      position: relative;
+    }
+    .icon-btn svg { width: 22px; height: 22px; }
+    .cart-count {
+      position: absolute; right: 6px; bottom: 6px;
+      min-width: 16px; height: 16px; border-radius: 8px;
+      background: var(--red); font: 700 10px/16px var(--head); text-align: center;
+    }
+    .desktop-only { display: none; }
+    @media (min-width: 990px) {
+      .desktop-only { display: grid; }
+      .mobile-only { display: none; }
+    }
+    .nav {
+      display: none;
+      justify-content: center;
+      gap: 26px;
+      padding: 0 0 16px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .nav a { text-decoration: none; color: rgba(255, 255, 255, .78); }
+    .nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
+    @media (min-width: 990px) { .nav { display: flex; } }
+
+    /* Phone menu drawer */
+    .drawer {
+      position: fixed; inset: 0; z-index: 50;
+      background: var(--charcoal); color: #fff;
+      padding: 18px var(--gutter) 40px;
+      transform: translateX(-100%);
+      transition: transform .35s cubic-bezier(.7, 0, .2, 1);
+      overflow-y: auto;
+    }
+    .drawer.open { transform: none; }
+    .drawer-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .drawer a {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      font: 700 22px/1.2 var(--head);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .drawer .sub { padding-left: 16px; font-size: 17px; font-weight: 400; color: rgba(255, 255, 255, .75); }
+
+    /* ===== Hero: dark, big faint vertical lettering ===== */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 104px);
+      background-color: var(--night);
+      /* subtle repeating flash-star pattern */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cpath d='M22 15l1.6 5.4L29 22l-5.4 1.6L22 29l-1.6-5.4L15 22l5.4-1.6z' fill='%23ffffff' fill-opacity='.035'/%3E%3C/svg%3E");
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      overflow: hidden;
+      padding: 36px var(--gutter) 40px;
+      text-align: center;
+    }
+    .ghost {
+      font-family: 'Pirata One', serif;
+      color: var(--ghost);
+      font-size: min(30vw, 12svh, 200px);
+      line-height: .82;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+    .ghost span { display: block; }
+    .hero-copy { display: grid; justify-items: center; gap: 16px; }
+    .hero-tag {
+      font: 400 13px/1.4 var(--head);
+      letter-spacing: .4em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .85);
+      margin: 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background: #fff;
+      color: var(--text);
+      font: 700 14px/1 var(--head);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid #fff;
+      transition: background .2s, color .2s;
+    }
+    .btn:hover { background: transparent; color: #fff; }
+    .btn-dark { background: var(--charcoal); color: #fff; border-color: var(--charcoal); }
+    .btn-dark:hover { background: #fff; color: var(--charcoal); }
+    .scroll-cue {
+      width: 1px; height: 36px; background: rgba(255, 255, 255, .4);
+      animation: cue 1.8s ease-in-out infinite;
+    }
+    @keyframes cue { 0%, 100% { transform: scaleY(.3); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } }
+
+    /* ===== White shop sections ===== */
+    .section { padding: 44px var(--gutter) 52px; background: var(--paper); }
+    .section h2 {
+      font: 700 clamp(28px, 6vw, 40px)/1.1 var(--head);
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      margin: 0 0 22px;
+    }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .section-head a { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--text-dim); }
+
+    .grid {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 10px;
+    }
+    @media (min-width: 990px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 32px 16px; } }
+    .card { text-decoration: none; display: block; }
+    .card-img { aspect-ratio: 1 / 1; overflow: hidden; background: #f3f3f3; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-title {
+      font: 700 14px/1.3 var(--head);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin: 12px 0 2px;
+    }
+    .card-sub { font-size: 13px; color: var(--text-dim); margin: 0; }
+
+    /* Horizontal swipe strip of artwork */
+    .strip {
+      display: flex; gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      margin: 0 calc(-1 * var(--gutter));
+      padding: 0 var(--gutter) 6px;
+      scrollbar-width: none;
+    }
+    .strip::-webkit-scrollbar { display: none; }
+    .strip img {
+      flex: 0 0 68%;
+      max-width: 340px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+
+    /* Dark booking band */
+    .band {
+      background: var(--night);
+      color: #fff;
+      text-align: center;
+      padding: 56px var(--gutter);
+    }
+    .band h2 { font: 700 clamp(28px, 6vw, 40px)/1.1 var(--head); text-transform: uppercase; margin: 0 0 12px; }
+    .band p { color: rgba(255, 255, 255, .72); max-width: 32em; margin: 0 auto 24px; }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(255, 255, 255, .78);
+      padding: 44px var(--gutter) 28px;
+      font-size: 14px;
+    }
+    .footer h3 { color: #fff; font: 700 18px/1.2 var(--head); text-transform: uppercase; margin: 0 0 14px; text-align: center; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 36px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: #fff; text-decoration: underline; }
+    .subscribe { max-width: 380px; margin: 0 auto 36px; }
+    .subscribe label { display: block; color: #fff; font: 700 16px/1.2 var(--head); margin-bottom: 12px; }
+    .subscribe-row { display: flex; border: 1px solid rgba(255, 255, 255, .55); }
+    .subscribe input {
+      flex: 1; min-width: 0;
+      background: transparent; border: 0; color: #fff;
+      padding: 14px 16px; font: inherit; font-size: 16px;
+    }
+    .subscribe input::placeholder { color: rgba(255, 255, 255, .6); }
+    .subscribe button { background: none; border: 0; color: #fff; width: 48px; cursor: pointer; font-size: 18px; }
+    .copyright { text-align: center; font-size: 12px; margin: 0; color: rgba(255, 255, 255, .55); }
+    .ig { display: inline-flex; gap: 8px; align-items: center; }
+  </style>
+</head>
+<body>
+  <script>
+    // Play the opening only on the first page view of a visit
+    try {
+      if (!sessionStorage.getItem('mk_intro_seen')) {
+        document.body.classList.add('intro');
+        sessionStorage.setItem('mk_intro_seen', '1');
+      }
+    } catch (e) { document.body.classList.add('intro'); }
+  </script>
+
+  <div class="site">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-row">
+        <div class="icons">
+          <button class="icon-btn mobile-only" id="menu-open" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          </button>
+          <button class="icon-btn desktop-only" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+          </button>
+        </div>
+
+        <a class="logo" href="#" aria-label="Michael Kaush, home">
+          <!-- Round badge logo: placeholder until Michael's final logo is ready -->
+          <svg viewBox="0 0 120 120" role="img" aria-hidden="true">
+            <defs><path id="ring" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+            <circle cx="60" cy="60" r="58" fill="#111" stroke="#fff" stroke-width="2.2"/>
+            <circle cx="60" cy="60" r="33" fill="none" stroke="#fff" stroke-width="1.6"/>
+            <text fill="#fff" font-family="Roboto Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="11.5" letter-spacing="1.6">
+              <textPath href="#ring" textLength="278" lengthAdjust="spacing">MICHAEL KAUSH ✦ TEL AVIV ✦ TATTOO ✦</textPath>
+            </text>
+            <!-- sacred heart -->
+            <path d="M60 81c-12-7.5-17-14-17-20.5 0-5 3.8-8.5 8.4-8.5 3.6 0 6.8 2 8.6 5 1.8-3 5-5 8.6-5 4.6 0 8.4 3.5 8.4 8.5 0 6.5-5 13-17 20.5z" fill="#fff"/>
+            <path d="M60 50c-3.5-3-3.5-7-1-10.5.2 2.6 1.6 3.6 3 4.6 1.8-2.6 1.4-5.4.6-7.4 4 3 5.4 9 .6 13.3z" fill="#c8372a"/>
+          </svg>
+        </a>
+
+        <div class="icons icons-right">
+          <button class="icon-btn mobile-only" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
+          </button>
+          <button class="icon-btn desktop-only" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+          </button>
+          <button class="icon-btn" aria-label="Cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Main">
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#shop">Tees</a>
+        <a href="#shop">Socks</a>
+        <a href="#shop">Hats</a>
+        <a href="#work">Gallery</a>
+        <a href="#book">Book a tattoo</a>
+      </nav>
+    </header>
+
+    <!-- Phone menu -->
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer-top">
+        <span style="font:700 14px var(--head);letter-spacing:.2em">MENU</span>
+        <button class="icon-btn" id="menu-close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <a href="#">Home</a>
+      <a href="#shop">Shop</a>
+      <a class="sub" href="#shop">Tees</a>
+      <a class="sub" href="#shop">Socks</a>
+      <a class="sub" href="#shop">Hats</a>
+      <a href="#work">Gallery</a>
+      <a href="#book">Book a tattoo</a>
+      <a href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="ghost" aria-hidden="true"><span>K</span><span>A</span><span>U</span><span>S</span><span>H</span></div>
+        <div class="hero-copy">
+          <p class="hero-tag">Tattoo artist original goods</p>
+          <a class="btn" href="#shop">Shop now</a>
+          <span class="scroll-cue" aria-hidden="true"></span>
+        </div>
+        <h1 class="sr-only">Michael Kaush — tattoo artist original tees, socks and hats</h1>
+      </section>
+
+      <!-- Shop by category -->
+      <section class="section" id="shop">
+        <div class="section-head">
+          <h2>Shop</h2>
+          <a href="#">View all</a>
+        </div>
+        <ul class="grid">
+          <li><a class="card" href="#">
+            <div class="card-img"><img src="../images/digital1.jpg" alt="True Love flash design" loading="lazy" width="720" height="1009"></div>
+            <p class="card-title">Tees</p>
+          </a></li>
+          <li><a class="card" href="#">
+            <div class="card-img"><img src="../images/pencil1.jpg" alt="Sacred heart flash sheet" loading="lazy" width="1178" height="1174"></div>
+            <p class="card-title">Socks</p>
+          </a></li>
+          <li><a class="card" href="#">
+            <div class="card-img"><img src="../images/ink1.jpg" alt="Swallowtail and rose ink drawing" loading="lazy" width="720" height="1280"></div>
+            <p class="card-title">Hats</p>
+          </a></li>
+          <li><a class="card" href="#">
+            <div class="card-img"><img src="../images/pencil2.jpg" alt="Cowgirl coloured pencil drawing" loading="lazy" width="720" height="1280"></div>
+            <p class="card-title">Prints</p>
+          </a></li>
+        </ul>
+      </section>
+
+      <!-- The work -->
+      <section class="section" id="work" style="padding-top:8px">
+        <div class="section-head">
+          <h2>The work</h2>
+          <a href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="strip">
+          <img src="../images/tattoo1.jpg" alt="Butterfly lady tattoo" loading="lazy" width="888" height="1084">
+          <img src="../images/pencil2.jpg" alt="Cowgirl drawing" loading="lazy" width="720" height="1280">
+          <img src="../images/digital1.jpg" alt="True Love flash" loading="lazy" width="720" height="1009">
+          <img src="../images/ink1.jpg" alt="Swallowtail and rose" loading="lazy" width="720" height="1280">
+          <img src="../images/pencil1.jpg" alt="Sacred heart sheet" loading="lazy" width="1178" height="1174">
+        </div>
+      </section>
+
+      <!-- Booking -->
+      <section class="band" id="book">
+        <h2>Book a tattoo</h2>
+        <p>Traditional tattoos at Psycho Tattoos, Dizengoff Center, Tel Aviv. Pick a flash design or bring your own idea.</p>
+        <a class="btn" href="https://ig.me/m/mktattooer" target="_blank" rel="noopener">Message on Instagram</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h3>Information</h3>
+      <div class="footer-links">
+        <a href="#">Search</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+        <a class="ig" href="https://www.instagram.com/mktattooer/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <form class="subscribe" onsubmit="return false">
+        <label for="email">Subscribe for new drops</label>
+        <div class="subscribe-row">
+          <input id="email" type="email" placeholder="Email" autocomplete="email">
+          <button type="submit" aria-label="Subscribe">→</button>
+        </div>
+      </form>
+      <p class="copyright">© <span id="y">2026</span> Michael Kaush</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    var drawer = document.getElementById('drawer');
+    var openBtn = document.getElementById('menu-open');
+    function setDrawer(open) {
+      drawer.classList.toggle('open', open);
+      drawer.setAttribute('aria-hidden', String(!open));
+      openBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    openBtn.addEventListener('click', function () { setDrawer(true); });
+    document.getElementById('menu-close').addEventListener('click', function () { setDrawer(false); });
+    drawer.addEventListener('click', function (e) { if (e.target.closest('a')) setDrawer(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDrawer(false); });
+  </script>
+</body>
+</html>
