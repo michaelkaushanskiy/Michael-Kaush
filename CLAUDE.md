@@ -33,9 +33,12 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 - Don't add stock imagery or other artists' work. Product imagery comes from Michael's designs.
 - Michael's design files: print-ready PNGs, transparent background (tees about 4500×5400 px at 300 DPI; embroidery: bold, few colours).
 
+## Done
+- New design published on the Horizon theme (store still password-protected).
+- Hebrew (/he) and Russian (/ru) are live, with every page, menu, collection and home/footer text translated. Language switcher in the header. Hebrew had to be attached to the store's web address with `webPresenceUpdate` (alternateLocales `["ru","he"]`). Theme text can only be translated after the theme is published, because translations use the live theme's content digests.
+
 ## Still to do
-- Translate the remaining menus, collection names and home-page text into Hebrew and Russian; add the language switcher; publish the Hebrew and Russian languages.
-- Publish the Horizon theme with the new design (Michael's OK first).
+- When adding any new text or product: add Hebrew and Russian translations too.
 - Cookie banner (Shopify admin → Settings → Customer privacy).
 - P.O. box address for the Business details page.
 - Products from Printify once Michael sends designs.
