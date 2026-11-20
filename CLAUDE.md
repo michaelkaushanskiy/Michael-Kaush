@@ -23,7 +23,8 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 
 ## Privacy rules: never break these
 - **Never put Michael's ID number, phone, or any address** in this repo, commit messages, the theme, the footer or any page, **except** the Shopify "Business details" page (ID, phone, email: the legal seller disclosure).
-- **Never publish his home/studio address.** It's private. If a legal address is needed, the plan is a P.O. box (ת.ד.); add it only when Michael provides one.
+- **Never publish his home address.** It's private.
+- His **studio** is a private studio at **Shvil HaMeretz 6, Tel Aviv**. Michael approved showing this address publicly (2026-11-20), e.g. in the "Book a tattoo" texts. He no longer works at Psycho Tattoos. Whether to use the studio address for the legal Business details page is still to be decided with Michael.
 - This repo is **public**. Never commit tokens, API keys, `.env` files, customer data, or order data.
 - Strip location (EXIF/GPS) data from photos before committing them.
 

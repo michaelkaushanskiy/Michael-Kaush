@@ -1,7 +1,7 @@
 # README - Michael Kaush Tattoo Website
 
 ## About
-Welcome to the official website of **Michael Kaush**, a professional tattoo artist specializing in **custom traditional tattoos**. Based in **Tel Aviv at Dizengoff Center**, I bring years of experience and passion to every piece, ensuring unique and high-quality designs for each client.
+Welcome to the official website of **Michael Kaush**, a professional tattoo artist specializing in **custom traditional tattoos**. Based in **Tel Aviv**, I bring years of experience and passion to every piece, ensuring unique and high-quality designs for each client.
 
 ## Features
 - **Website**: Showcasing my latest tattoo work and custom flash designs, you can also see it at the website: www.michaelkaush.com
@@ -17,7 +17,7 @@ Welcome to the official website of **Michael Kaush**, a professional tattoo arti
 
 ## Contact
 - **Instagram**: @mktattoer
-- **Studio**: Psycho Tattoos, Dizengoff Center, Tel Aviv
+- **Studio**: Private studio, Shvil HaMeretz 6, Tel Aviv
 
 ---
 
