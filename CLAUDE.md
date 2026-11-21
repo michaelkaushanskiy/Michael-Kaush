@@ -21,10 +21,12 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 - Business: Osek Murshe. Prices are in ILS and include VAT. Ships to Israel and worldwide. Returns follow the Israeli legal minimum (14 days; fee up to 5% or ₪100, whichever is lower).
 - Legal pages are Shopify **pages**, not Shopify's built-in Policies (no API access to those): Business details, Terms, Returns & cancellation, Shipping, Privacy, Accessibility statement, Cancel a purchase (contact form). All are linked in the footer.
 
-## Products (decided)
-- **T-shirt:** Gildan 64000 Softstyle (Printify blueprint 145), print provider **Monster Digital** (id from the catalog API), **front + back** print: small flash/logo on the front chest (~9–10 cm), big drawing on the back (~28–30 cm wide). Black and white, S–XXL. Cost ≈ $16.20 product + $10.39 shipping to Israel ($4 per extra item). Price **₪120 incl. VAT** (Michael decided 2026-11-21), customer pays shipping.
-- **Dad hat (concept):** embroidered flash in the shape of the design, front. Michael wants **₪100–120 incl. VAT**, which only works with ValuCap (recommended ₪110). Candidates: Yupoong 6245CM (blueprint 1447, Fulfill Engine, ≈$21 + $10.39) or ValuCap (5383, Duplium, ≈$14 + $12.49). Not decided.
-- **Socks (concept):** all-over print like Michael's reference (full background + main motif on the outer side, black heel/toe). Candidates: Pic The Gift (1433, ≈$7.47 + $11.49) or ArtsAdd (365, ≈$11.49 + $3.69, ships from China). Not decided.
+## Products (decided 2026-11-21: Michael's final picks, best quality)
+- **T-shirt:** Comfort Colors 1717 (Printify blueprint 706), print provider **Monster Digital**, **front + back**: small flash/logo on the front chest (~9–10 cm), big drawing on the back (~28–30 cm wide). Black and white. Cost ≈ $19.73 + $10.39 shipping to Israel. **Price ₪139 incl. VAT** → ≈ ₪42 profit after VAT.
+- **Dad hat:** Yupoong 6245CM Classic Dad Cap (blueprint 1447), provider **Printful**, embroidered flash in the shape of the design on the front. Cost ≈ $21.36 + $10.39. **Price ₪135 incl. VAT** → ≈ ₪33.
+- **Socks:** Cushioned Crew Socks (blueprint 574), provider **ThreadStudio**, all-over print, black heel/toe. Cost ≈ $11.40 + $8.79. **Price ₪79 incl. VAT** (≈ ₪30) or ₪89 (≈ ₪38). Final sock price still to confirm.
+- Shipping charged to customers: flat **₪49 incl. VAT per order**. Each extra item in an order costs us only ≈ $4 to ship.
+- Assumptions: ₪3.70/$, ~3% payment fees, VAT 18% included in prices. Recalculate with the real rate before publishing.
 - Printify API token is saved as a network secret on the "Michael-Kaush" environment (host api.printify.com); Printify shop id 29645230 ("My new store", linked to Shopify). Never print or store the token.
 - Israeli prices feel high because of US→Israel shipping (~₪38–43 per order). Idea for later: print best-sellers locally in Israel, keep Printify for abroad.
 
