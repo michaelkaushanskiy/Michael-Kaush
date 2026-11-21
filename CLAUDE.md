@@ -21,6 +21,13 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 - Business: Osek Murshe. Prices are in ILS and include VAT. Ships to Israel and worldwide. Returns follow the Israeli legal minimum (14 days; fee up to 5% or ₪100, whichever is lower).
 - Legal pages are Shopify **pages**, not Shopify's built-in Policies (no API access to those): Business details, Terms, Returns & cancellation, Shipping, Privacy, Accessibility statement, Cancel a purchase (contact form). All are linked in the footer.
 
+## Products (decided)
+- **T-shirt:** Gildan 64000 Softstyle (Printify blueprint 145), print provider **Monster Digital** (id from the catalog API), **front + back** print: small flash/logo on the front chest (~9–10 cm), big drawing on the back (~28–30 cm wide). Black and white, S–XXL. Cost ≈ $16.20 product + $10.39 shipping to Israel ($4 per extra item). Target price **₪119 incl. VAT**.
+- **Dad hat (concept):** embroidered flash in the shape of the design, front. Candidates: Yupoong 6245CM (blueprint 1447, Fulfill Engine, ≈$21 + $10.39) or ValuCap (5383, Duplium, ≈$14 + $12.49). Not decided.
+- **Socks (concept):** all-over print like Michael's reference (full background + main motif on the outer side, black heel/toe). Candidates: Pic The Gift (1433, ≈$7.47 + $11.49) or ArtsAdd (365, ≈$11.49 + $3.69, ships from China). Not decided.
+- Printify API token is saved as a network secret on the "Michael-Kaush" environment (host api.printify.com); Printify shop id 29645230 ("My new store", linked to Shopify). Never print or store the token.
+- Israeli prices feel high because of US→Israel shipping (~₪38–43 per order). Idea for later: print best-sellers locally in Israel, keep Printify for abroad.
+
 ## Privacy rules: never break these
 - **Never put Michael's ID number, phone, or any address** in this repo, commit messages, the theme, the footer or any page, **except** the Shopify "Business details" page (ID, phone, email: the legal seller disclosure).
 - **Never publish his home address.** It's private.
