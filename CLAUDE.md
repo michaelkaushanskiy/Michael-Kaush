@@ -24,7 +24,7 @@ Read this first. Michael is new to code: explain in plain language, keep it shor
 ## Products (decided 2026-11-21: Michael's final picks, best quality)
 - **T-shirt:** Comfort Colors 1717 (Printify blueprint 706), print provider **Monster Digital**, **front + back**: small flash/logo on the front chest (~9–10 cm), big drawing on the back (~28–30 cm wide). Black and white. Cost ≈ $19.73 + $10.39 shipping to Israel. **Price ₪139 incl. VAT** → ≈ ₪42 profit after VAT.
 - **Dad hat:** Yupoong 6245CM Classic Dad Cap (blueprint 1447), provider **Printful**, embroidered flash in the shape of the design on the front. Cost ≈ $21.36 + $10.39. **Price ₪135 incl. VAT** → ≈ ₪33.
-- **Socks:** Cushioned Crew Socks (blueprint 574), provider **ThreadStudio**, all-over print, black heel/toe. Cost ≈ $11.40 + $8.79. **Price ₪79 incl. VAT** (≈ ₪30) or ₪89 (≈ ₪38). Final sock price still to confirm.
+- **Socks:** Cushioned Crew Socks (blueprint 574), provider **ThreadStudio**, all-over print, black heel/toe. Cost ≈ $11.40 + $8.79. **Price ₪89 incl. VAT** (decided) → ≈ ₪38 when ordered alone, ≈ ₪16 when added to another order.
 - Shipping charged to customers: flat **₪49 incl. VAT per order**. Each extra item in an order costs us only ≈ $4 to ship.
 - Assumptions: ₪3.70/$, ~3% payment fees, VAT 18% included in prices. Recalculate with the real rate before publishing.
 - Printify API token is saved as a network secret on the "Michael-Kaush" environment (host api.printify.com); Printify shop id 29645230 ("My new store", linked to Shopify). Never print or store the token.
